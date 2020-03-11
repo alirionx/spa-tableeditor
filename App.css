@@ -1,38 +1,58 @@
-.App {
+.stdTable{
+  min-width: 800px;
+  max-width: 90%;
+  margin: 40px auto auto auto; 
+}
+.stdTable th{
+  text-transform: capitalize;
+  color:#fff;
+  background-color: #3e4b5e;
+  padding:8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.stdTable td{
+  color:#000;
+  background-color: #fff;
+  padding:8px;
+  font-size: 14px;
+}
+
+.actionBtn{
+  width:80px;
+  padding:4px;
+  margin: -8px;
+  font-size: 12px;
+  background-color: #3e4b5e;
+  color: #fff;
   text-align: center;
+  border: 1px solid #222;
+  border-radius: 4px;
+  cursor:pointer;
+}
+.actionBtn:hover{
+  background-color: #272f3a;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.actionMenu{
+  display:inline-block;
+  position: absolute;
+  left:100px;
+  top:6px;
+  width:80px;
+  z-index: 2;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.actionMenu div{
+  padding:3px;
+  margin: -1px;
+  font-size: 12px;
+  background-color: #4d1e10;
+  color: #fff;
+  text-align: center;
+  border: 1px solid rgb(51, 21, 6);
+  border-radius: 4px;
+  cursor:pointer;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.actionMenu div:hover{
+  background-color: rgb(54, 23, 6);
 }

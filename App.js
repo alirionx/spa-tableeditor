@@ -1,25 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import contactsData from './data/contacts.json';
+import Actionmenu from './ActionMenu';
 
 function App() {
+
+  function build_hl(){
+    let keys = Object.keys(contactsData[0])
+    return <tr>
+      { keys.map((key, index)=>{ return <th key={key}>{key}</th> }) }
+      <th>option</th>
+    </tr>
+  }
+  function build_rows(){
+    let keys = Object.keys(contactsData[0])
+    return contactsData.map((row, index) =>{
+      return <tr key={index}>
+        { keys.map(key=>{
+            return <td key={row[key]}>{row[key]}</td>
+          })
+        }
+        <td style={{position: "relative", textAlign: "center"}}>
+          <Actionmenu />
+        </td>
+      </tr>
+    })
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <table className="stdTable">
+      <thead>{ build_hl() }</thead>
+      <tbody>{ build_rows() }</tbody>
+    </table>
   );
 }
 

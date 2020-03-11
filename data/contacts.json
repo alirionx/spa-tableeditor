@@ -1,0 +1,16 @@
+[
+    {
+        "firstname": "Daniel",
+        "lastname": "Quili",
+        "address": "Hackstr. 666",
+        "city": "Stuttgart",
+        "postalcode": 70190
+    },
+    {
+        "firstname": "Angela",
+        "lastname": "Quili",
+        "address": "Eisenacherstr. 667",
+        "city": "Ziegenhain",
+        "postalcode": 34613
+    }
+]
