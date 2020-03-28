@@ -1,0 +1,42 @@
+[
+    {
+        "col": "brand",
+        "hl": "Brand",
+        "align": "left",
+        "type": "string",
+        "pattern": false,
+        "intable": true
+    },
+    {
+        "col": "model",
+        "hl": "Model",
+        "align": "left",
+        "type": "string",
+        "pattern": false,
+        "intable": true
+    },
+    {
+        "col": "engine",
+        "hl": "Engine",
+        "align": "left",
+        "type": "string",
+        "pattern": false,
+        "intable": true
+    },
+    {
+        "col": "color",
+        "hl": "Color",
+        "align": "left",
+        "type": "string",
+        "pattern": false,
+        "intable": true
+    },
+    {
+        "col": "horsepowers",
+        "hl": "Horse powers",
+        "align": "center",
+        "type": "integer",
+        "pattern": "\\d+",
+        "intable": true
+    }
+]

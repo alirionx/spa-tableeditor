@@ -1,0 +1,31 @@
+
+select{
+  display:table;
+  margin:20px auto 20px auto; 
+  padding: 8px;
+  min-width: 200px;
+  font-size: 14px;
+  border: 1px solid #AAA;
+  box-shadow: 0px 1px 2px #444;
+}
+table{
+  margin: auto;
+  min-width: 800px;
+
+}
+table tr:hover td{
+  background-color: rgb(244, 248, 255);
+}
+
+table th{
+  padding: 6px;
+  background-color: rgb(30, 43, 63);
+  color: #fff;
+  font-weight: bold;
+}
+table td{
+  padding: 6px;
+  background-color: #fff;
+  color: rgb(30, 43, 63);
+  border: 1px solid #AAA;
+}
