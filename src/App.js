@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import './App.css';
 
+import ActionMenue from './Actionmenu';
 
 export default class Tables extends React.Component{
   constructor(props) {
@@ -44,6 +45,7 @@ export default class Tables extends React.Component{
         { this.state.defi.filter(col => col.intable ).map(
           col => <th key={col.col} style={{textAlign:col.align}}>{col.hl}</th> 
         )}
+        <th>Options</th>
       </tr>
     )
   }
@@ -56,6 +58,9 @@ export default class Tables extends React.Component{
             { this.state.defi.filter(col => col.intable ).map(
               col => <td key={col.col} style={{textAlign:col.align}} >{row[col.col]}</td> 
             )}
+            <td>
+              <ActionMenue table={this.state.table} rowid={index} />
+            </td>
           </tr>
         )
       })
@@ -79,4 +84,4 @@ export default class Tables extends React.Component{
       </div>
     )
   }
-}
+} 

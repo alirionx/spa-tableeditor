@@ -1,0 +1,35 @@
+button{
+    display:table;
+    padding:6px;
+    width: 80px;
+    background-color: rgb(87, 25, 17);
+    color:#fff;
+    margin:-2px auto -2px auto;
+    border:1px solid rgb(51, 16, 11);
+    border-radius: 4px;
+    cursor:pointer;
+}
+
+.ActionMenu{
+    display: table;
+    margin: 0px 5px 0px 5px;
+    position: absolute;
+    left:130px;
+    top:4px;
+    width: 100px;
+    text-align: center;
+    font-size: 12px;
+    z-index: 2;
+}
+.ActionMenu div{
+    padding:4px;
+    background-color: rgb(87, 25, 17);
+    color:#fff;
+    margin:-2px;
+    border:1px solid rgb(51, 16, 11);
+    border-radius: 4px;
+    cursor:pointer;
+}
+.ActionMenu div:hover{
+    background-color: rgb(122, 41, 31);
+}
