@@ -1,38 +1,91 @@
-.App {
+#snap{
+  position: fixed;
+  top: 10px;
+  left:10px;
+  width:98%;
+  min-height: 1px;
+  background-color: #CCC;
+}
+
+
+select{
+  display:table;
+  margin:20px auto 20px auto; 
+  padding: 8px;
+  min-width: 200px;
+  font-size: 14px;
+  border: none;
+  box-shadow: 0px 1px 3px #444;
+}
+table{
+  margin: auto;
+  min-width: 800px;
+
+}
+table tr{
+  cursor:pointer;
+}
+table tr:hover td{
+  background-color: rgb(244, 248, 255);
+}
+
+table th{
+  padding: 6px;
+  background-color: rgb(30, 43, 63);
+  color: #fff;
+  font-weight: bold;
+}
+table td{
+  padding: 6px;
+  background-color: #fff;
+  color: rgb(30, 43, 63);
+  border: 1px solid #AAA;
+}
+table td:last-child{
+  position:relative;
+  width:100px;
+}
+
+button{
+  display:table;
+  padding:6px;
+  width: 80px;
+  background-color: rgb(87, 25, 17);
+  color:#fff;
+  margin:-2px auto -2px auto;
+  border:1px solid rgb(51, 16, 11);
+  border-radius: 4px;
+  cursor:pointer;
+}
+
+.ActionMenu{
+  display: table;
+  margin: auto;
+  position: absolute;
+  top:2px;
+  left:6px;
+  width: 100px;
   text-align: center;
+  font-size: 12px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ActionMenu div:first-child{
+  background-color: #fff;
+  color: rgb(51, 16, 11);
+  margin-bottom:4px;
+  border:1px solid rgb(51, 16, 11);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ActionMenu div:first-child:hover{
+  color:#fff;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.ActionMenu div{
+  padding:4px;
+  background-color: rgb(87, 25, 17);
+  color:#fff;
+  margin-bottom:-2px;
+  border:1px solid rgb(51, 16, 11);
+  border-radius: 4px;
+  cursor:pointer;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ActionMenu div:hover{
+  background-color: rgb(122, 41, 31);
 }
