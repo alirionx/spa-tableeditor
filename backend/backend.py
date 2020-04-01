@@ -61,6 +61,41 @@ def table_get(table):
     )
     return response
 
+#-------------------------------------------------
+
+@app.route('/api/row/<table>/<rowid>', methods=['GET']) 
+def table_row_get(table, rowid):
+
+    rowObj = {}
+    rowObj["defi"] = []
+    rowObj["data"] = []
+
+    try:
+        defiFileObj = open('defi/'+table+'.json')
+        dataFileObj = open('data/'+table+'.json')
+        
+        defiFileStr = defiFileObj.read()
+        dataFileStr = dataFileObj.read()
+
+        defiObj = json.loads(defiFileStr)
+        dataObj = json.loads(dataFileStr)
+
+        rowObj["defi"] = defiObj
+        rowObj["data"] = dataObj[int(rowid)]
+
+    except Exception as e: 
+        print(e)
+        return 'gehderned', 404
+
+    jsonOut = json.dumps(rowObj, indent=2)
+
+    #-----------------------------
+    response = app.response_class(
+        response=jsonOut,
+        status=200,
+        mimetype='application/json'
+    )
+    return response
 
 #-------------------------------------------------------------------------
 

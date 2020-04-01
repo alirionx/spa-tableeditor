@@ -1,6 +1,10 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import axios from 'axios';
 import './App.css';
+
+import EditRow from './Editrow'
+
 
 
 export default class Mytable extends React.Component{
@@ -10,7 +14,7 @@ export default class Mytable extends React.Component{
     this.tableList = ["contacts", "cars"];
     this.menuActions = ["edit", "copy", "delete"];
     this.state = {
-      table:"",
+      table:"contacts",
       defi:[],
       data:[],
       menu: false
@@ -93,16 +97,30 @@ export default class Mytable extends React.Component{
 
 
   call_action(rowId, act){
-    alert('route to: '+this.state.table + ' - ' + rowId + ' - ' + act); 
+    var actMapper = {
+      "edit": this.call_edit,
+      "copy": this.call_edit,
+      "delete": this.call_edit
+    }
+    //alert('route to: '+this.state.table + ' - ' + rowId + ' - ' + act); 
     this.setState({menu:false})
+    actMapper[act](this.state.table, rowId)
   }  
+
+  call_edit( table, rowId){
+    ReactDOM.render(
+      <EditRow table={table} rowid={rowId} />, document.getElementById('snap')
+    );
+  }
+  
+
 
   action_menu(props){
     let test ={}
     if(this.state.menu === props.rowId){
       return (
         <div className="ActionMenu" style={{zIndex:2}}>
-        <div>action</div>
+        <div >action</div>
           {this.menuActions.map( act => <div onClick={() => this.call_action(props.rowId, act) } menu="yes" key={act}>{act}</div> )}
         </div>
       )
