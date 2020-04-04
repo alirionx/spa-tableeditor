@@ -1,16 +1,23 @@
 [
-    {
-        "brand": "Porsche",
-        "model": "911",
-        "engine": "3L Benzin",
-        "color": "red",
-        "horsepowers": 322
-    },
-    {
-        "brand": "Volkswagen",
-        "model": "Golf",
-        "engine": "1.4L Benzin",
-        "color": "white",
-        "horsepowers": 90
-    }
+  {
+    "brand": "Porschesvsv",
+    "model": "911",
+    "engine": "3L Benzin",
+    "color": "red",
+    "horsepowers": 322
+  },
+  {
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "engine": "1.4L Benzin",
+    "color": "white",
+    "horsepowers": "92"
+  },
+  {
+    "brand": "BMW",
+    "model": "7er",
+    "engine": "5.0 TDI",
+    "color": "black",
+    "horsepowers": "214"
+  }
 ]

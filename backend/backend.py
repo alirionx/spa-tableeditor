@@ -31,24 +31,24 @@ def root():
 def table_get(table):
 
     tableObj = {}
-    tableObj["defi"] = []
+    #tableObj["defi"] = []
     tableObj["data"] = []
 
     try:
-        defiFileObj = open('defi/'+table+'.json')
+        #defiFileObj = open('defi/'+table+'.json')
         dataFileObj = open('data/'+table+'.json')
         
-        defiFileStr = defiFileObj.read()
+        #defiFileStr = defiFileObj.read()
         dataFileStr = dataFileObj.read()
 
-        defiObj = json.loads(defiFileStr)
+        #defiObj = json.loads(defiFileStr)
         dataObj = json.loads(dataFileStr)
 
     except Exception as e: 
         print(e)
         return 'gehderned', 404
 
-    tableObj["defi"] = defiObj
+    #tableObj["defi"] = defiObj
     tableObj["data"] = dataObj
 
     jsonOut = json.dumps(tableObj, indent=2)
@@ -67,21 +67,28 @@ def table_get(table):
 def table_row_get(table, rowid):
 
     rowObj = {}
-    rowObj["defi"] = []
-    rowObj["data"] = []
+    #rowObj["defi"] = []
+    rowObj["data"] = {}
 
     try:
-        defiFileObj = open('defi/'+table+'.json')
+        #defiFileObj = open('defi/'+table+'.json')
         dataFileObj = open('data/'+table+'.json')
         
-        defiFileStr = defiFileObj.read()
+        #defiFileStr = defiFileObj.read()
         dataFileStr = dataFileObj.read()
 
-        defiObj = json.loads(defiFileStr)
+        #defiFileObj.close()
+        dataFileObj.close()
+
+        #defiObj = json.loads(defiFileStr)
         dataObj = json.loads(dataFileStr)
 
-        rowObj["defi"] = defiObj
-        rowObj["data"] = dataObj[int(rowid)]
+        #rowObj["defi"] = defiObj
+        try:
+            rowid = int(rowid)
+            rowObj["data"] = dataObj[rowid]
+        except:
+            rowObj["data"] = False
 
     except Exception as e: 
         print(e)
@@ -96,7 +103,72 @@ def table_row_get(table, rowid):
         mimetype='application/json'
     )
     return response
+#-------------------------------------------------
 
+@app.route('/api/row/edit', methods=['POST']) 
+def table_row_edit():
+    print(request.form['rowid'])
+    try:
+        table = request.form["table"]
+        rowid = request.form["rowid"]
+        dataIn = request.form["data"]
+        data = json.loads(dataIn)
+        dataFileObj = open('data/'+table+'.json', 'r')
+        dataFileStr = dataFileObj.read()
+        dataFileObj.close()
+    except Exception as e: 
+        print(e)
+        return 'gehderned', 404
+
+    rowObj = json.loads(dataFileStr)
+    try:
+        rowObj[int(rowid)] = data
+    except:
+        rowObj.append(data)
+   
+    jsonOut = json.dumps(rowObj, indent=2)
+    
+    dataFileObj = open('data/'+table+'.json', 'w')
+    dataFileObj.write(jsonOut)
+    dataFileObj.close()
+    
+    #-----------------------------
+    response = app.response_class(
+        response=jsonOut,
+        status=200,
+        mimetype='application/json'
+    )
+    return response
+
+#-------------------------------------------------
+
+@app.route('/api/row/delete', methods=['POST']) 
+def table_row_delete():
+    try:
+        table = request.form["table"]
+        rowid = int(request.form["rowid"])
+        dataFileObj = open('data/'+table+'.json')
+        dataFileStr = dataFileObj.read()
+        dataObj = json.loads(dataFileStr)
+    except:
+        return 'gehderned', 404
+   
+    del dataObj[rowid]
+    #print(dataObj)
+
+    jsonOut = json.dumps(dataObj, indent=2)
+    
+    dataFileObj = open('data/'+table+'.json', 'w')
+    dataFileObj.write(jsonOut)
+    dataFileObj.close()
+    
+    #-----------------------------
+    response = app.response_class(
+        response=jsonOut,
+        status=200,
+        mimetype='application/json'
+    )
+    return response
 #-------------------------------------------------------------------------
 
 if __name__ == '__main__':

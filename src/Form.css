@@ -1,0 +1,89 @@
+#ActionBox{
+    display: table;
+    margin: 6vh auto auto auto;
+    width:50%;
+    min-width: 500px;
+    padding:24px;
+    background-color: #FAFAFA;
+    color:#000;
+    border:1px solid #666;
+    border-radius: 10px;
+    box-shadow: 2px 10px 10px #444;
+}
+#ActionBox div[css=hl]{
+    padding: 6px;
+    margin-bottom:12px;
+    background-color: rgb(30, 43, 63);
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 6px;
+}
+#ActionBox div[css=msg]{
+    padding: 28px;
+    display:table;
+    width:90%;
+    margin:20px auto 20px auto;
+    background-color: #fff;
+    color: #000;
+    font-size: 24px;
+    text-align: center;
+    border-radius: 6px;
+    border: 1px solid #888;
+}
+
+#ActionBox div[css=iptHl]{
+    padding: 16px 4px 2px 6px;
+    color: rgb(30, 43, 63);
+    font-weight: bold;
+    text-align: left;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+#ActionBox input[type=text]{
+    padding: 8px;
+    display:block;
+    width:95%;
+    margin:2px auto 6px 6px;
+    background-color: #fff;
+    color: #000;
+    text-align: left;
+    border-radius: 6px;
+    border: 1px solid #888;
+}
+#ActionBox input[type=number]{
+    padding: 8px;
+    display:block;
+    width:20%;
+    margin:2px auto 6px 6px;
+    background-color: #fff;
+    color: #000;
+    text-align: left;
+    border-radius: 6px;
+    border: 1px solid #888;
+}
+
+#ActionBox input:focus{
+    background-color: rgb(238, 246, 255);
+}
+
+#ActionBox div[css=btnFrame]{
+    text-align: center;
+    padding:20px 6px 6px 6px;
+}
+#ActionBox div[css=btnFrame] button{
+    display:inline;
+    padding:6px;
+    width: 100px;
+    background-color: rgb(87, 25, 17);
+    color:#fff;
+    font-weight: bold;
+    margin: auto 10px auto 10px;
+    border:1px solid rgb(51, 16, 11);
+    border-radius: 6px;
+    cursor:pointer;
+}
+#ActionBox div[css=btnFrame] button:hover{
+    background-color: rgb(126, 35, 23);
+}

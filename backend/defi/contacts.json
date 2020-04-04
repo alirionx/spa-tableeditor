@@ -4,32 +4,36 @@
         "hl": "First name",
         "align": "left",
         "type": "string",
-        "pattern": false,
-        "intable": true
+        "pattern": "",
+        "intable": true,
+        "manda": true
     },
     {
         "col": "lastname",
         "hl": "Lastname",
         "align": "left",
         "type": "string",
-        "pattern": false,
-        "intable": true
+        "pattern": "",
+        "intable": true,
+        "manda": false
     },
     {
         "col": "address",
         "hl": "Address",
         "align": "left",
         "type": "string",
-        "pattern": false,
-        "intable": true
+        "pattern": "",
+        "intable": true,
+        "manda": false
     },
     {
         "col": "city",
         "hl": "City",
         "align": "left",
         "type": "string",
-        "pattern": false,
-        "intable": true
+        "pattern": "",
+        "intable": true,
+        "manda": false
     },
     {
         "col": "postcode",
@@ -37,6 +41,7 @@
         "align": "center",
         "type": "integer",
         "pattern": "\\d{5}",
-        "intable": true
+        "intable": true,
+        "manda": false
     }
 ]

@@ -4,32 +4,36 @@
         "hl": "Brand",
         "align": "left",
         "type": "string",
-        "pattern": false,
-        "intable": true
+        "pattern": "",
+        "intable": true,
+        "manda": false
     },
     {
         "col": "model",
         "hl": "Model",
         "align": "left",
         "type": "string",
-        "pattern": false,
-        "intable": true
+        "pattern": "",
+        "intable": true,
+        "manda": false
     },
     {
         "col": "engine",
         "hl": "Engine",
         "align": "left",
         "type": "string",
-        "pattern": false,
-        "intable": true
+        "pattern": "",
+        "intable": true,
+        "manda": false
     },
     {
         "col": "color",
         "hl": "Color",
         "align": "left",
         "type": "string",
-        "pattern": false,
-        "intable": true
+        "pattern": "",
+        "intable": true,
+        "manda": false
     },
     {
         "col": "horsepowers",
@@ -37,6 +41,7 @@
         "align": "center",
         "type": "integer",
         "pattern": "\\d+",
-        "intable": true
+        "intable": true,
+        "manda": false
     }
 ]

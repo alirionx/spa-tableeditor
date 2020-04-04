@@ -1,23 +1,24 @@
 [
-    {
-        "firstname": "Daniel",
-        "lastname": "Quilitzsch",
-        "address": "Hackstr 21",
-        "city": "Stuttgart",
-        "postcode": 70190
-    },
-    {
-        "firstname": "Angela",
-        "lastname": "Quilitzsch",
-        "address": "Eisenacherstr. 10",
-        "city": "Schwalmstadt",
-        "postcode": 34613
-    },
-    {
-        "firstname": "Beate",
-        "lastname": "Marquardt",
-        "address": "Hackstr 21",
-        "city": "Stuttgart",
-        "postcode": 70190
-    }
+  {
+    "firstname": "Daniel",
+    "lastname": "Quilitzsch",
+    "address": "Hackstr 21",
+    "city": "Stuttgart",
+    "postcode": 70190,
+    "phone": "+49 152 3314 8859"
+  },
+  {
+    "firstname": "Angela",
+    "lastname": "Quilitzsch",
+    "address": "Eisenacherstr. 10",
+    "city": "Schwalmstadt",
+    "postcode": 34613
+  },
+  {
+    "firstname": "Beate",
+    "lastname": "Marquardt",
+    "address": "Hackstr 21",
+    "city": "Stuttgart",
+    "postcode": "70191"
+  }
 ]
