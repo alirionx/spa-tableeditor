@@ -28,6 +28,16 @@ export const defi = {
                 manda: false
             },
             {
+              col: "type",
+              hl: "Type",
+              align: "left",
+              type: "select",
+              pattern: "",
+              intable: true,
+              manda: false,
+              options: ["Coupe", "Cabrio", "Combi", "Limousine"]
+          },
+            {
                 col: "engine",
                 hl: "Engine",
                 align: "left",
@@ -153,13 +163,13 @@ export default class MyTable extends React.Component{
       this.table_body = this.table_body.bind(this);
       this.action_menu = this.action_menu.bind(this);
       this.hide_menus = this.hide_menus.bind(this);
-      this.call_action = this.call_action.bind(this);
+      this.action_call = this.action_call.bind(this);
       
       this.evMenuOff = this.evMenuOff.bind(this);
       document.body.addEventListener('click', this.evMenuOff);
       }
 
-    evMenuOff(ev){this.hide_menus(ev.target)};
+    evMenuOff(ev){this.hide_menus(ev)};
     
     bg_request(table){
       if(table !== undefined){
@@ -205,7 +215,7 @@ export default class MyTable extends React.Component{
         isVal = this.state.table;
       }
         return(
-        <select value={isVal} onChange={this.set_table}>
+        <select css="main" value={isVal} onChange={this.set_table}>
           <option value="">please select a table</option>
           {this.tableList.map( tbl => <option key={tbl} value={tbl}>{tbl}</option> )}
         </select>
@@ -235,7 +245,7 @@ export default class MyTable extends React.Component{
           <tr>
               <td style={{border:"none"}}>
                 <div className="ActionMenu" >
-                    <div style={{marginTop:"10px"}} onClick={()=> this.call_action("add", "edit")}>add</div>
+                    <div style={{marginTop:"10px"}} onClick={()=> this.action_call("add", "edit")}>add</div>
                 </div>
               </td>
           </tr>
@@ -243,41 +253,42 @@ export default class MyTable extends React.Component{
       )
     }
   
-    call_action(rowId, act){
+    action_menu(props){
+      return (
+        <div className="ActionMenu" >
+        <div onClick={this.action_menu_switch}>action</div>
+          {this.menuActions.map( act => <div onClick={() => this.action_call(props.rowId, act) } menu="yes" key={act}>{act}</div> )}
+        </div>
+      )
+    }
+    action_menu_switch(event){
+        var elm = event.target.parentNode;
+        if(elm.classList.contains("amShowAll")){
+            elm.classList.remove("amShowAll");
+        }
+        else{
+            elm.classList.add("amShowAll");
+        }
+    }
+    action_call(rowId, act){
       this.setState({menu:false})
       document.body.removeEventListener('click', this.evMenuOff);
+      this.hide_menus();
       window.location.hash = '/row/'+act+'/'+this.state.table+'/'+rowId
     }  
-  
-    action_menu(props){
-      let test ={}
-      if(this.state.menu === props.rowId){
-        return (
-          <div className="ActionMenu" style={{zIndex:2}}>
-          <div >action</div>
-            {this.menuActions.map( act => <div onClick={() => this.call_action(props.rowId, act) } menu="yes" key={act}>{act}</div> )}
-          </div>
-        )
-      }
-      else{
-        return(
-          <div className="ActionMenu" style={test}>
-            <div onClick={()=>this.setState({menu:props.rowId})}>action</div>
-          </div>
-        )
-      }
-    }
-  
-    hide_menus(target){
-      if(!target.hasAttribute("menu")){
-        this.setState({menu:false});
+    hide_menus(ev){
+      if(ev === undefined || !ev.target.hasAttribute("menu")){
+        var elmList = document.body.getElementsByClassName("ActionMenu");
+        for (var i = 0; i < elmList.length; i++) {
+            elmList[i].classList.remove("amShowAll");
+        }
       }
     }
   
     render(){
       let tblElm
       if(this.state.table!==""){
-        tblElm = <table>
+        tblElm = <table css="stdTbl">
           <this.table_head />
           <this.table_body />
         </table>

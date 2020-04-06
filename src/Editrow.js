@@ -91,8 +91,11 @@ export default class RowEdit extends React.Component{
         if(defi.manda){
             manda = "required"
         }
+        if(defi.options === undefined){
+            defi.options = [];
+        }
 
-        var elmString = (
+        var elmStr = (
             <div>
                 <div css="iptHl" >{defi.hl}</div>
                 <input type="text" 
@@ -120,9 +123,24 @@ export default class RowEdit extends React.Component{
             </div>
         )
 
+        var elmSel = (
+            <div>
+                <div css="iptHl" >{defi.hl}</div>
+                <select type="dropdown" 
+                    value={this.state.data[defi.col]}  
+                    col={defi.col}
+                    onChange={this.set_data_val}
+                >
+                    <option value="">please select a type</option>
+                    {defi.options.map((val, index)=> <option key={index} value={val}>{val}</option>) }
+                </select>
+            </div>
+        )
+
         var elmMapper ={
-            "string": elmString,
-            "integer": elmInt
+            "string": elmStr,
+            "integer": elmInt,
+            "select": elmSel,
         }
 
         return elmMapper[defi.type]

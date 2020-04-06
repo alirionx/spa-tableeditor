@@ -1,0 +1,70 @@
+#headBlock{
+  position: absolute;
+  width:100%;
+  height: 100px;
+  left: 0px;
+  top:0px;
+  background-color:rgb(30, 43, 63);
+  color:#fff;
+  text-align: center;
+}
+#headBlock div[css=hl]{
+  padding:30px 20px 10px 20px;
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+  *background-color: rgb(42, 57, 80);
+}
+
+.menuFrame{
+  position:absolute;
+  right:10px;
+  bottom:4px;
+  *background-color: rgb(42, 57, 80);
+  color:#fff;
+  font-size: 14px;
+}
+.menuFrame td{
+  position: relative;
+  width:120px;
+  height:24px;
+  padding:6px;
+  *background-color: aliceblue;
+}
+.menuFrame td:hover div[css=btnFrame] div[css=subBtn]{
+  display:block;
+}
+.menuFrame div[css=btnFrame]{
+  display:block;
+  position:absolute;
+  top:6px;
+  right:6px;
+  padding-bottom: 14px;
+}
+.menuFrame div[css=btnFrame] div{
+  cursor: pointer;
+  color:#fff;
+  border:1px solid #fff;
+  padding:4px;
+  width:110px;
+  margin-bottom: -1px;
+}
+
+.menuFrame div[css=btnFrame] div[css=mainBtn]{
+  border-radius: 6px 0px 6px 0px;
+  margin-bottom: 8px;
+}
+.menuFrame div[css=btnFrame] div[css=subBtn]{
+  display:none;
+  border-radius: 0px;
+  background-color: rgb(42, 57, 80);
+}
+.menuFrame div[css=btnFrame] div:hover{
+  background-color: rgb(69, 92, 128);
+}
+
+
+
+
+
+

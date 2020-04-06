@@ -63,9 +63,20 @@
     border-radius: 6px;
     border: 1px solid #888;
 }
-
 #ActionBox input:focus{
     background-color: rgb(238, 246, 255);
+}
+
+#ActionBox select[type=dropdown]{
+    padding: 8px;
+    display:block;
+    width:50%;
+    margin:2px auto 6px 6px;
+    background-color: #fff;
+    color: #000;
+    text-align: left;
+    border-radius: 6px;
+    border: 1px solid #888;
 }
 
 #ActionBox div[css=btnFrame]{

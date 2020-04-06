@@ -4,20 +4,23 @@
     "model": "911",
     "engine": "3L Benzin",
     "color": "red",
-    "horsepowers": 322
+    "horsepowers": 322,
+    "type": "Coupe"
   },
   {
     "brand": "Volkswagen",
     "model": "Golf",
     "engine": "1.4L Benzin",
     "color": "white",
-    "horsepowers": "92"
+    "horsepowers": "92",
+    "type": "Limousine"
   },
   {
     "brand": "BMW",
-    "model": "7er",
+    "model": "7ers",
     "engine": "5.0 TDI",
-    "color": "black",
-    "horsepowers": "214"
+    "color": "green",
+    "horsepowers": "214",
+    "type": "Limousine"
   }
 ]
